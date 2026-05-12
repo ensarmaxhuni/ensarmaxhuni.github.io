@@ -1,0 +1,28 @@
+Ensar Example
+Washington, DC | ensar@example.com | LinkedIn | GitHub
+
+SUMMARY
+MBA candidate focused on Artificial Intelligence, business analytics, finance, and automation. Interested in AI Business Analyst and Data Analyst roles.
+
+SKILLS
+Python, SQL, Excel, Power BI, Data Analysis, Generative AI, OpenAI, Dashboard Design, Financial Analysis, Project Management
+
+EXPERIENCE
+Business Operations Assistant
+- Analyzed weekly sales and operations reports using Excel and dashboards.
+- Improved reporting process by reducing manual tracking time by 25%.
+- Coordinated projects across business, finance, and customer service teams.
+
+PROJECTS
+AI Resume Analyzer
+- Built a Streamlit application that analyzes resumes and compares them with job descriptions.
+- Created keyword matching logic for AI, data, and business roles.
+- Designed ATS-style scoring and improvement recommendations.
+
+EDUCATION
+MBA, Artificial Intelligence Concentration
+University of the Potomac
+
+CERTIFICATIONS
+DeepLearning.AI AI For Everyone
+DeepLearning.AI Generative AI
