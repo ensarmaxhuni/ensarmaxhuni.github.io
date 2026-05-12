@@ -1,27 +1,268 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Ensar Maxhuni | AI Portfolio</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ensar Maxhuni | AI & Business Intelligence Portfolio</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: #0f172a;
+      color: #e5e7eb;
+      line-height: 1.6;
+    }
+
+    header {
+      padding: 70px 10%;
+      background: linear-gradient(135deg, #0f172a, #1e3a8a);
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 70px;
+    }
+
+    nav h2 {
+      color: #ffffff;
+    }
+
+    nav a {
+      color: #e5e7eb;
+      text-decoration: none;
+      margin-left: 20px;
+      font-weight: bold;
+    }
+
+    .hero h1 {
+      font-size: 52px;
+      color: #ffffff;
+      margin-bottom: 15px;
+    }
+
+    .hero h3 {
+      font-size: 26px;
+      color: #93c5fd;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      max-width: 750px;
+      font-size: 18px;
+      color: #cbd5e1;
+      margin-bottom: 30px;
+    }
+
+    .btn {
+      display: inline-block;
+      background: #2563eb;
+      color: #ffffff;
+      padding: 14px 24px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      margin-right: 10px;
+    }
+
+    section {
+      padding: 70px 10%;
+    }
+
+    h2.section-title {
+      font-size: 34px;
+      color: #ffffff;
+      margin-bottom: 25px;
+    }
+
+    .about, .skills, .projects, .contact {
+      background: #111827;
+      margin: 30px 10%;
+      padding: 40px;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+    }
+
+    .skills-grid, .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      margin-top: 25px;
+    }
+
+    .card {
+      background: #1f2937;
+      padding: 25px;
+      border-radius: 14px;
+      border: 1px solid #334155;
+    }
+
+    .card h3 {
+      color: #93c5fd;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      color: #cbd5e1;
+      font-size: 15px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      color: #94a3b8;
+      background: #020617;
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 38px;
+      }
+
+      nav {
+        flex-direction: column;
+        gap: 15px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-  <h1>Ensar Maxhuni</h1>
+  <header>
+    <nav>
+      <h2>Ensar Maxhuni</h2>
+      <div>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
 
-  <h2>AI & Business Intelligence Portfolio</h2>
+    <div class="hero">
+      <h1>AI & Business Intelligence Portfolio</h1>
+      <h3>Generative AI • Data Analytics • Finance • Automation</h3>
+      <p>
+        I am building practical AI-powered solutions that combine business strategy,
+        financial analytics, automation, and data-driven decision-making. My portfolio
+        focuses on real-world AI applications using Python, Generative AI, dashboards,
+        and intelligent business tools.
+      </p>
 
-  <p>
-    MBA in Artificial Intelligence focused on Generative AI,
-    Financial Analytics, Automation, and AI-powered applications.
-  </p>
+      <a class="btn" href="#projects">View Projects</a>
+      <a class="btn" href="#contact">Contact Me</a>
+    </div>
+  </header>
 
-  <h3>Projects</h3>
+  <section id="about" class="about">
+    <h2 class="section-title">About Me</h2>
+    <p>
+      I am an MBA candidate focused on Artificial Intelligence, Business Intelligence,
+      financial analytics, and automation. My goal is to build AI tools that help
+      businesses improve decision-making, automate workflows, analyze data, and create
+      measurable business value.
+    </p>
+    <br>
+    <p>
+      My interests include Generative AI, AI consulting, business analysis, financial
+      technology, market intelligence, and AI-powered productivity systems.
+    </p>
+  </section>
 
-  <ul>
-    <li>AI Resume Analyzer</li>
-    <li>AI Financial News Analyzer</li>
-    <li>RAG PDF Chatbot</li>
-  </ul>
+  <section id="skills" class="skills">
+    <h2 class="section-title">Core Skills</h2>
+
+    <div class="skills-grid">
+      <div class="card">
+        <h3>Generative AI</h3>
+        <p>Prompt engineering, AI assistants, LLM applications, and business AI workflows.</p>
+      </div>
+
+      <div class="card">
+        <h3>Python</h3>
+        <p>Building AI applications, automation scripts, data tools, and API-based projects.</p>
+      </div>
+
+      <div class="card">
+        <h3>Data Analytics</h3>
+        <p>Business intelligence, dashboards, market analysis, reporting, and data storytelling.</p>
+      </div>
+
+      <div class="card">
+        <h3>Finance & Business</h3>
+        <p>Financial analysis, economic research, business strategy, and decision support systems.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" class="projects">
+    <h2 class="section-title">AI Portfolio Projects</h2>
+
+    <div class="project-grid">
+      <div class="card">
+        <h3>AI Resume Analyzer</h3>
+        <p>
+          An AI-powered tool that reviews resumes, identifies strengths, detects missing
+          skills, and provides improvement suggestions for job seekers.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>AI Financial News Analyzer</h3>
+        <p>
+          A finance-focused AI tool that summarizes market news, analyzes sentiment,
+          and explains potential business or investment impact.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>RAG PDF Chatbot</h3>
+        <p>
+          A document-based AI chatbot that allows users to upload PDFs and ask questions
+          using retrieval-augmented generation.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>AI Business Automation Agent</h3>
+        <p>
+          An AI assistant designed to automate business tasks such as summarizing emails,
+          generating reports, and organizing workflows.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>MLOps Model Deployment</h3>
+        <p>
+          A machine learning deployment project using APIs, Docker, and production-style
+          documentation to demonstrate real-world AI delivery.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <h2 class="section-title">Contact</h2>
+    <p>
+      I am open to opportunities in AI, business intelligence, data analytics,
+      AI consulting, and automation-focused roles.
+    </p>
+    <br>
+    <p>Email: your-email-here</p>
+    <p>GitHub: https://github.com/yourusername</p>
+    <p>LinkedIn: your-linkedin-here</p>
+  </section>
+
+  <footer>
+    <p>© 2026 Ensar Maxhuni. AI & Business Intelligence Portfolio.</p>
+  </footer>
 
 </body>
 </html>
