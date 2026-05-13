@@ -39,3 +39,4 @@ https://ensarmaxhuni.github.io
 
 - GitHub: https://github.com/ensarmaxhuni
 - LinkedIn: https://linkedin.com/in/ensarmaxhuni
+- Email: ensar.maxhuni@gmail.com
