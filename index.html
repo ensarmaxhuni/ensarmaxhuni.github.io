@@ -3,405 +3,332 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>Ensar Maxhuni | AI & Business Intelligence Portfolio</title>
-  
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
   <style>
-    :root {
-      --bg-dark: #020617;
-      --glass-bg: rgba(15, 23, 42, 0.5);
-      --glass-border: rgba(148, 163, 184, 0.15);
-      --accent-blue: #3b82f6;
-      --accent-purple: #8b5cf6;
-      --accent-cyan: #22d3ee;
-      --text-main: #f8fafc;
-      --text-muted: #94a3b8;
-    }
-
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-family: Inter, Arial, sans-serif;
     }
 
     body {
-      background-color: var(--bg-dark);
-      color: var(--text-main);
-      overflow-x: hidden;
-      background-image: 
-        linear-gradient(rgba(255,255,255,0.015) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.015) 1px, transparent 1px);
-      background-size: 50px 50px;
+      background:
+        radial-gradient(circle at top left, rgba(59,130,246,0.35), transparent 35%),
+        radial-gradient(circle at top right, rgba(168,85,247,0.25), transparent 30%),
+        #020617;
+      color: #f8fafc;
+      min-height: 100vh;
     }
-
-    html.lenis { height: auto; }
-    .lenis.lenis-smooth { scroll-behavior: auto; }
-    .lenis.lenis-smooth [data-lenis-prevent] { overscroll-behavior: contain; }
-    .lenis.lenis-stopped { overflow: hidden; }
-    .lenis.lenis-scrolling iframe { pointer-events: none; }
 
     .container {
       width: 90%;
       max-width: 1200px;
       margin: auto;
-      position: relative;
-      z-index: 10;
     }
 
     nav {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 25px 0;
-      position: relative;
-      z-index: 100;
+      padding: 28px 0;
     }
 
     .logo {
       font-size: 22px;
       font-weight: 800;
       letter-spacing: -0.5px;
-      background: linear-gradient(90deg, #ffffff, #94a3b8);
-      -webkit-background-clip: text;
-      color: transparent;
     }
 
     .nav-links a {
-      color: var(--text-muted);
+      color: #cbd5e1;
       text-decoration: none;
-      margin-left: 35px;
-      font-size: 14px;
-      font-weight: 600;
-      transition: color 0.3s ease;
-      position: relative;
+      margin-left: 28px;
+      font-size: 15px;
+      transition: 0.3s;
     }
 
-    .nav-links a::after {
-      content: '';
-      position: absolute;
-      width: 0;
-      height: 2px;
-      bottom: -4px;
-      left: 0;
-      background: var(--accent-cyan);
-      transition: width 0.3s ease;
+    .nav-links a:hover {
+      color: #60a5fa;
     }
 
-    .nav-links a:hover { color: #fff; }
-    .nav-links a:hover::after { width: 100%; }
-
-    #vanta-canvas {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100vh;
-      z-index: 0;
-      pointer-events: none;
-      mask-image: linear-gradient(to bottom, black 40%, transparent 100%);
-      -webkit-mask-image: linear-gradient(to bottom, black 40%, transparent 100%);
-      opacity: 0.6;
-    }
-
-    /* FIXED: Removed massive min-height and tightened gap */
     .hero {
       display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 30px;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 50px;
       align-items: center;
-      padding: 50px 0 30px; 
-      position: relative;
+      padding: 90px 0 70px;
     }
 
     .badge {
-      display: inline-flex;
-      align-items: center;
-      padding: 8px 16px;
-      border: 1px solid rgba(147, 197, 253, 0.2);
-      background: rgba(30, 41, 59, 0.4);
-      backdrop-filter: blur(10px);
+      display: inline-block;
+      padding: 8px 14px;
+      border: 1px solid rgba(147,197,253,0.35);
+      background: rgba(30,41,59,0.6);
       border-radius: 999px;
       color: #93c5fd;
-      margin-bottom: 20px;
-      font-size: 12px;
-      font-weight: 600;
-      letter-spacing: 0.5px;
-      text-transform: uppercase;
-    }
-
-    .pulse {
-      width: 8px; height: 8px;
-      background: #10b981;
-      border-radius: 50%;
-      display: inline-block;
-      margin-right: 10px;
-      box-shadow: 0 0 10px #10b981;
-      animation: pulseAnim 2s infinite;
-    }
-
-    @keyframes pulseAnim {
-      0% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
-      70% { box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
-      100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+      margin-bottom: 24px;
+      font-size: 14px;
     }
 
     h1 {
-      font-size: clamp(34px, 5vw, 60px);
-      line-height: 1.1;
-      letter-spacing: -1.5px;
-      margin-bottom: 16px;
-      font-weight: 800;
+      font-size: clamp(44px, 7vw, 82px);
+      line-height: 0.95;
+      letter-spacing: -3px;
+      margin-bottom: 24px;
     }
 
     .gradient-text {
-      background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple), var(--accent-cyan));
+      background: linear-gradient(90deg, #60a5fa, #a78bfa, #22d3ee);
       -webkit-background-clip: text;
       color: transparent;
-      display: inline-block;
     }
 
     .hero p {
-      color: var(--text-muted);
-      font-size: 16px;
-      max-width: 580px;
-      margin-bottom: 25px;
-      line-height: 1.6;
+      color: #cbd5e1;
+      font-size: 18px;
+      max-width: 680px;
+      margin-bottom: 32px;
+      line-height: 1.7;
     }
 
     .buttons a {
       display: inline-block;
-      padding: 12px 24px;
-      border-radius: 10px;
+      padding: 14px 22px;
+      border-radius: 12px;
       text-decoration: none;
-      font-weight: 600;
+      font-weight: 700;
       margin-right: 12px;
-      font-size: 14px;
-      transition: all 0.3s ease;
+      transition: 0.3s;
     }
 
     .primary {
       background: linear-gradient(90deg, #2563eb, #7c3aed);
       color: white;
-      box-shadow: 0 8px 20px rgba(37, 99, 235, 0.3);
-      border: 1px solid transparent;
+      box-shadow: 0 15px 35px rgba(37,99,235,0.35);
     }
 
     .primary:hover {
       transform: translateY(-3px);
-      box-shadow: 0 12px 25px rgba(124, 58, 237, 0.5);
     }
 
     .secondary {
-      border: 1px solid var(--glass-border);
+      border: 1px solid rgba(148,163,184,0.35);
       color: #e2e8f0;
-      background: var(--glass-bg);
-      backdrop-filter: blur(10px);
+      background: rgba(15,23,42,0.65);
     }
 
     .secondary:hover {
-      background: rgba(255,255,255,0.08);
-      transform: translateY(-3px);
-      border-color: rgba(255,255,255,0.3);
+      border-color: #60a5fa;
     }
 
     .profile-card {
-      background: linear-gradient(145deg, rgba(30,41,59,0.5), rgba(15,23,42,0.8));
-      border: 1px solid var(--glass-border);
-      border-radius: 20px;
-      padding: 25px;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.4);
-      backdrop-filter: blur(20px);
-      transition: transform 0.4s ease, border-color 0.4s ease;
+      background: rgba(15,23,42,0.75);
+      border: 1px solid rgba(148,163,184,0.2);
+      border-radius: 28px;
+      padding: 32px;
+      box-shadow: 0 30px 80px rgba(0,0,0,0.45);
+      backdrop-filter: blur(18px);
     }
 
-    .profile-card:hover { 
-      transform: translateY(-5px); 
-      border-color: rgba(59, 130, 246, 0.3);
+    .profile-card h2 {
+      font-size: 28px;
+      margin-bottom: 14px;
     }
 
-    .profile-card h2 { font-size: 20px; margin-bottom: 10px; color: #fff; }
-    .profile-card > p { color: var(--text-muted); margin-bottom: 15px; line-height: 1.5; font-size: 14px; }
+    .profile-card p {
+      color: #cbd5e1;
+      margin-bottom: 20px;
+      line-height: 1.6;
+    }
 
-    .stat-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+    .stat-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+      margin-top: 22px;
+    }
 
     .stat {
-      background: rgba(15,23,42,0.6);
-      border-radius: 12px;
-      padding: 14px;
-      border: 1px solid var(--glass-border);
+      background: rgba(30,41,59,0.85);
+      border-radius: 18px;
+      padding: 18px;
+      border: 1px solid rgba(148,163,184,0.15);
     }
 
     .stat strong {
-      font-size: 22px;
-      background: linear-gradient(90deg, #60a5fa, #22d3ee);
-      -webkit-background-clip: text;
-      color: transparent;
-      font-weight: 800;
+      font-size: 26px;
+      color: #60a5fa;
     }
 
-    .stat p { margin-top: 4px; color: var(--text-muted); font-size: 11px; font-weight: 600; text-transform: uppercase;}
+    .stat p {
+      margin-top: 8px;
+      color: #cbd5e1;
+    }
 
-    /* FIXED GAPS: Reduced section padding massively */
-    section { padding: 40px 0; position: relative; } 
+    section {
+      padding: 70px 0;
+    }
 
     .section-title {
-      font-size: 30px;
-      letter-spacing: -1px;
-      margin-bottom: 10px;
-      font-weight: 800;
-      color: #fff;
+      font-size: 40px;
+      letter-spacing: -1.5px;
+      margin-bottom: 14px;
     }
 
     .section-subtitle {
-      color: var(--text-muted);
-      max-width: 650px;
-      margin-bottom: 25px; 
-      line-height: 1.6;
-      font-size: 15px;
+      color: #94a3b8;
+      max-width: 700px;
+      margin-bottom: 35px;
+      line-height: 1.7;
     }
 
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-      gap: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 22px;
     }
 
     .card {
-      background: linear-gradient(180deg, rgba(30,41,59,0.4), rgba(15,23,42,0.7));
-      border: 1px solid var(--glass-border);
-      border-radius: 16px;
-      padding: 24px;
-      transition: all 0.4s ease;
-      position: relative;
-      overflow: hidden;
-      backdrop-filter: blur(10px);
+      background: rgba(15,23,42,0.72);
+      border: 1px solid rgba(148,163,184,0.18);
+      border-radius: 24px;
+      padding: 26px;
+      transition: 0.25s;
     }
 
     .card:hover {
-      transform: translateY(-5px);
-      border-color: rgba(96,165,250,0.5);
-      box-shadow: 0 15px 30px rgba(37,99,235,0.15);
+      transform: translateY(-6px);
+      border-color: rgba(96,165,250,0.65);
+      box-shadow: 0 20px 50px rgba(37,99,235,0.16);
     }
 
-    .card-icon-wrap {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 45px;
-      height: 45px;
-      background: linear-gradient(135deg, rgba(37, 99, 235, 0.15), rgba(124, 58, 237, 0.15));
-      border-radius: 12px;
-      margin-bottom: 15px;
-      border: 1px solid rgba(59, 130, 246, 0.3);
+    .card span {
+      font-size: 28px;
     }
 
-    .card h3 { margin-bottom: 10px; font-size: 18px; font-weight: 700; color: #f8fafc;}
-    .card p { color: var(--text-muted); font-size: 13px; line-height: 1.6;}
+    .card h3 {
+      margin: 16px 0 10px;
+      font-size: 21px;
+    }
+
+    .card p {
+      color: #cbd5e1;
+      font-size: 15px;
+      line-height: 1.6;
+    }
 
     .tag {
       display: inline-block;
-      margin-top: 15px;
-      padding: 5px 10px;
-      border-radius: 6px;
-      background: rgba(37,99,235,0.1);
-      border: 1px solid rgba(59,130,246,0.2);
+      margin-top: 18px;
+      padding: 7px 11px;
+      border-radius: 999px;
+      background: rgba(37,99,235,0.16);
       color: #93c5fd;
-      font-size: 11px;
-      font-weight: 700;
-      text-transform: uppercase;
+      font-size: 13px;
     }
 
     .project-links {
       display: flex;
       gap: 10px;
-      margin-top: 15px;
+      margin-top: 18px;
       flex-wrap: wrap;
     }
 
     .project-links a {
       text-decoration: none;
-      padding: 8px 12px;
-      border-radius: 6px;
-      font-size: 12px;
+      padding: 9px 13px;
+      border-radius: 10px;
+      font-size: 13px;
       font-weight: 700;
       color: #ffffff;
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.1);
-      transition: all 0.3s ease;
+      background: linear-gradient(90deg, #2563eb, #7c3aed);
+      transition: 0.3s;
     }
 
     .project-links a:hover {
-      background: linear-gradient(90deg, #2563eb, #7c3aed);
-      border-color: transparent;
       transform: translateY(-2px);
+      box-shadow: 0 10px 25px rgba(37, 99, 235, 0.3);
     }
 
     .contact-box {
-      background: linear-gradient(135deg, rgba(30,41,59,0.6), rgba(15,23,42,0.8));
-      border: 1px solid rgba(147,197,253,0.15);
-      border-radius: 20px;
-      padding: 40px 20px;
+      background: linear-gradient(135deg, rgba(37,99,235,0.22), rgba(124,58,237,0.22));
+      border: 1px solid rgba(147,197,253,0.25);
+      border-radius: 28px;
+      padding: 40px;
       text-align: center;
-      position: relative;
     }
 
     .contact-links {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 15px;
-      margin-top: 25px;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      margin-top: 32px;
     }
 
     .contact-card {
       text-decoration: none;
-      background: rgba(15, 23, 42, 0.7);
-      border: 1px solid var(--glass-border);
-      padding: 20px 15px;
-      border-radius: 14px;
+      background: rgba(15, 23, 42, 0.75);
+      border: 1px solid rgba(148, 163, 184, 0.25);
+      padding: 26px;
+      border-radius: 20px;
       text-align: center;
-      transition: all 0.3s ease;
+      transition: 0.3s ease;
       color: #e5e7eb;
     }
 
     .contact-card:hover {
-      transform: translateY(-5px);
-      border-color: rgba(96, 165, 250, 0.4);
-      background: rgba(30, 41, 59, 0.9);
+      transform: translateY(-6px);
+      border-color: rgba(96, 165, 250, 0.9);
+      box-shadow: 0 18px 45px rgba(37, 99, 235, 0.28);
     }
 
-    /* THE ICON FIX: Forces the SVG to explicitly be 36px wide and colored */
-    .contact-card strong { display: block; font-size: 15px; color: #fff; margin-bottom: 4px; font-weight: 700; }
-    .contact-card small { color: #94a3b8; font-size: 12px; }
+    .contact-card span {
+      font-size: 36px;
+      display: block;
+      margin-bottom: 12px;
+    }
+
+    .contact-card strong {
+      display: block;
+      font-size: 18px;
+      color: #ffffff;
+      margin-bottom: 6px;
+    }
+
+    .contact-card small {
+      color: #93c5fd;
+      font-size: 14px;
+    }
 
     footer {
-      padding: 20px 0;
+      padding: 30px 0;
       text-align: center;
       color: #64748b;
-      font-size: 13px;
-      border-top: 1px solid rgba(255,255,255,0.05);
-      margin-top: 20px;
+      border-top: 1px solid rgba(148,163,184,0.12);
     }
 
-    @media (max-width: 968px) {
-      .hero { grid-template-columns: 1fr; text-align: center; padding-top: 60px; }
-      .hero p { margin: 0 auto 20px; }
-      .badge { margin: 0 auto 20px; }
-      .profile-card { max-width: 500px; margin: 0 auto; }
-      .nav-links { display: none; }
+    @media (max-width: 850px) {
+      .hero {
+        grid-template-columns: 1fr;
+        padding-top: 50px;
+      }
+
+      .nav-links {
+        display: none;
+      }
     }
   </style>
 </head>
 
 <body>
-  <div id="vanta-canvas"></div>
-
   <div class="container">
-    <nav class="gsap-nav">
+
+    <nav>
       <div class="logo">Ensar Maxhuni</div>
+
       <div class="nav-links">
         <a href="#about">About</a>
         <a href="#skills">Skills</a>
@@ -411,298 +338,283 @@
     </nav>
 
     <main class="hero">
-      <div class="gsap-hero-left">
+
+      <div>
         <div class="badge">
-          <span class="pulse"></span> AI • BI • Finance • Tech
+          AI • Business Intelligence • Finance • Automation
         </div>
-        
+
         <h1>
-          Building <br/>
-          <span class="gradient-text">Advanced AI</span> <br/>
-          business systems.
+          Building
+          <span class="gradient-text">AI-powered</span>
+          business solutions.
         </h1>
 
         <p>
           I combine Artificial Intelligence, business strategy, financial analytics,
-          and automation to build scalable, high-performance tools that solve complex 
-          enterprise problems and drive data-backed decision-making.
+          and automation to build practical tools that solve real-world problems
+          and support better decision-making.
         </p>
 
         <div class="buttons">
-          <a href="#projects" class="primary">Explore Projects</a>
-          <a href="#contact" class="secondary">Connect</a>
+          <a href="#projects" class="primary">View Projects</a>
+          <a href="#contact" class="secondary">Contact Me</a>
         </div>
       </div>
 
-      <div class="profile-card gsap-hero-right">
-        <h2>AI Enterprise Focus</h2>
+      <div class="profile-card">
+        <h2>AI Portfolio Focus</h2>
+
         <p>
-          MBA in Artificial Intelligence specializing in Generative AI architecture, 
-          business intelligence automation, and financial logic scaling.
+          MBA in Artificial Intelligence with a focus on Generative AI,
+          analytics, business automation, financial intelligence,
+          and applied AI solutions.
         </p>
 
         <div class="stat-grid">
+
           <div class="stat">
-            <strong>12+</strong>
-            <p>Projects</p>
+            <strong>12</strong>
+            <p>AI Projects</p>
           </div>
+
           <div class="stat">
-            <strong>B2B</strong>
-            <p>Solutions</p>
+            <strong>AI</strong>
+            <p>Business Focus</p>
           </div>
+
           <div class="stat">
             <strong>Python</strong>
             <p>Core Stack</p>
           </div>
+
           <div class="stat">
             <strong>LLMs</strong>
-            <p>GenAI</p>
+            <p>GenAI Apps</p>
           </div>
+
         </div>
       </div>
+
     </main>
 
-    <section id="about" class="gsap-section">
-      <h2 class="section-title">Professional Summary</h2>
+    <section id="about">
+      <h2 class="section-title">About Me</h2>
+
       <p class="section-subtitle">
-        I engineer highly practical, AI-powered solutions that bridge the gap between 
-        cutting-edge Generative AI models and core business operations. By leveraging automation, 
-        vector databases, and financial analytics, I transform raw data into measurable corporate value.
+        I am focused on building practical AI-powered solutions that combine
+        Generative AI, automation, financial analytics, business intelligence,
+        and data-driven decision-making to create measurable value for businesses
+        and modern organizations.
       </p>
     </section>
 
-    <section id="skills" class="gsap-section">
-      <h2 class="section-title">Core Technologies</h2>
+    <section id="skills">
+
+      <h2 class="section-title">Core Skills</h2>
+
       <p class="section-subtitle">
-        Enterprise-grade technical capabilities utilized in real-world deployments.
+        Technical and business skills developed through real AI portfolio projects.
       </p>
 
-      <div class="grid gsap-stagger-grid">
+      <div class="grid">
+
         <div class="card">
-          <div class="card-icon-wrap">
-            <svg width="24" height="24" fill="#93c5fd" viewBox="0 0 24 24"><path d="M12 2a2 2 0 0 1 2 2c0 .74-.4 1.39-1 1.73V7h1a7 7 0 0 1 7 7h1a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-1v1a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-1H2a2 2 0 0 1-2-2v-2a2 2 0 0 1 2-2h1a7 7 0 0 1 7-7h1V5.73A2 2 0 1 1 12 2zm-3 10a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm6 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4z"/></svg>
-          </div>
-          <h3>Generative AI & RAG</h3>
-          <p>LLM orchestration, prompt engineering, AI agents, and custom retrieval-augmented pipelines.</p>
+          <span>🤖</span>
+          <h3>Generative AI</h3>
+          <p>
+            LLM applications, prompt engineering, AI assistants,
+            and business AI workflows.
+          </p>
         </div>
+
         <div class="card">
-          <div class="card-icon-wrap">
-            <svg width="24" height="24" fill="#93c5fd" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zM8 15.5l-4-4 4-4 1.41 1.41L6.83 11.5l2.58 2.59L8 15.5zm6 0h-4v-2h4v2z"/></svg>
-          </div>
-          <h3>Backend Development</h3>
-          <p>Python engineering, API architecture, sophisticated automation scripts, and scalable frameworks.</p>
+          <span>🐍</span>
+          <h3>Python Development</h3>
+          <p>
+            AI apps, APIs, automation scripts,
+            and Streamlit dashboards.
+          </p>
         </div>
+
         <div class="card">
-          <div class="card-icon-wrap">
-            <svg width="24" height="24" fill="#93c5fd" viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/></svg>
-          </div>
-          <h3>Data & Analytics</h3>
-          <p>Business intelligence visualization, statistical reporting, market analysis, and real-time dashboards.</p>
+          <span>📊</span>
+          <h3>Data Analytics</h3>
+          <p>
+            Business intelligence, reporting,
+            market analysis, and dashboards.
+          </p>
         </div>
+
         <div class="card">
-          <div class="card-icon-wrap">
-            <svg width="24" height="24" fill="#93c5fd" viewBox="0 0 24 24"><path d="M16 6l2.29 2.29-4.88 4.88-4-4L2 16.59 3.41 18l6-6 4 4 6.3-6.29L22 12V6z"/></svg>
-          </div>
-          <h3>Finance & Strategy</h3>
-          <p>Algorithmic financial analysis, macro-economic research modeling, and strategic tech deployment.</p>
+          <span>💼</span>
+          <h3>Business & Finance</h3>
+          <p>
+            Financial analysis, economic research,
+            and strategic decision support.
+          </p>
         </div>
+
       </div>
     </section>
 
-    <section id="projects" class="gsap-section">
-      <h2 class="section-title">Enterprise AI Portfolio</h2>
+    <section id="projects">
+
+      <h2 class="section-title">Featured AI Projects</h2>
+
       <p class="section-subtitle">
-        A selection of high-impact technical builds and analytical systems.
+        A hiring-focused AI portfolio designed around practical and in-demand AI technologies.
       </p>
 
-      <div class="grid gsap-stagger-grid">
+      <div class="grid">
+
         <div class="card">
-          <div class="card-icon-wrap">
-            <svg width="24" height="24" fill="#93c5fd" viewBox="0 0 24 24"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg>
-          </div>
+          <span>📄</span>
           <h3>AI Resume Analyzer</h3>
-          <p>AI-powered parsing tool that runs comparative analysis against job descriptions to identify skill gaps.</p>
+          <p>
+            AI-powered resume analysis tool that identifies strengths,
+            missing skills, ATS improvement areas, and optimization opportunities.
+          </p>
+
           <div class="tag">Python • Streamlit • OpenAI</div>
+
           <div class="project-links">
-            <a href="https://ai-resume-analyzer-ensarmaxhuni.streamlit.app/" target="_blank">Live Demo</a>
-            <a href="https://github.com/ensarmaxhuni/ai-resume-analyzer" target="_blank">GitHub Code</a>
+            <a href="https://ai-resume-analyzer-ensarmaxhuni.streamlit.app/" target="_blank">
+              Live Demo
+            </a>
+
+            <a href="https://github.com/ensarmaxhuni/ai-resume-analyzer" target="_blank">
+              GitHub Code
+            </a>
           </div>
         </div>
 
         <div class="card">
-          <div class="card-icon-wrap">
-             <svg width="24" height="24" fill="#93c5fd" viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/></svg>
-          </div>
+          <span>📈</span>
           <h3>AI Financial News Analyzer</h3>
-          <p>Market intelligence engine that aggregates live financial news and generates strategic insight briefs.</p>
+          <p>
+            Financial market intelligence application that summarizes
+            market news, analyzes sentiment, and generates AI-powered
+            business insights.
+          </p>
+
           <div class="tag">Finance • APIs • NLP</div>
+
           <div class="project-links">
-            <a href="https://ai-financial-news-analyzer-nzjnftapfpz4dhcptdcnu6.streamlit.app/" target="_blank">Live Demo</a>
-            <a href="https://github.com/ensarmaxhuni/ai-financial-news-analyzer" target="_blank">GitHub Code</a>
+            <a href="https://ai-financial-news-analyzer-nzjnftapfpz4dhcptdcnu6.streamlit.app/" target="_blank">
+              Live Demo
+            </a>
+
+            <a href="https://github.com/ensarmaxhuni/ai-financial-news-analyzer" target="_blank">
+              GitHub Code
+            </a>
           </div>
         </div>
 
         <div class="card">
-          <div class="card-icon-wrap">
-            <svg width="24" height="24" fill="#93c5fd" viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-2 10H6v-2h12v2zm0-3H6V7h12v2z"/></svg>
-          </div>
+          <span>💬</span>
           <h3>RAG PDF Chatbot</h3>
-          <p>Ingests PDFs into a vector database, enabling users to contextually query and retrieve specific data points.</p>
-          <div class="tag">RAG • Vector DB • LLMs</div>
+          <p>
+            AI-powered document intelligence chatbot that allows users
+            to upload PDFs, search content, retrieve relevant sections,
+            and ask questions using a Retrieval-Augmented Generation
+            workflow.
+          </p>
+
+          <div class="tag">RAG • PDF AI • Retrieval Systems</div>
+
           <div class="project-links">
-            <a href="https://ai-rag-pdf-chatbot-by-ensarmaxhuni.streamlit.app/" target="_blank">Live Demo</a>
-            <a href="https://github.com/ensarmaxhuni/ai-rag-pdf-chatbot" target="_blank">GitHub Code</a>
+            <a href="https://ai-rag-pdf-chatbot-by-ensarmaxhuni.streamlit.app/" target="_blank">
+              Live Demo
+            </a>
+
+            <a href="https://github.com/ensarmaxhuni/ai-rag-pdf-chatbot" target="_blank">
+              GitHub Code
+            </a>
           </div>
         </div>
+
+        <div class="card">
+          <span>⚙️</span>
+          <h3>AI Business Automation Agent</h3>
+          <p>
+            AI automation assistant for reports,
+            workflows, summaries, and research.
+          </p>
+
+          <div class="tag">Automation • AI Agents</div>
+        </div>
+
+        <div class="card">
+          <span>🚀</span>
+          <h3>MLOps Model Deployment</h3>
+          <p>
+            Production-style AI deployment project using APIs,
+            Docker, and scalable architecture.
+          </p>
+
+          <div class="tag">FastAPI • Docker • ML</div>
+        </div>
+
+        <div class="card">
+          <span>🌍</span>
+          <h3>AI Economic Intelligence Dashboard</h3>
+          <p>
+            AI dashboard for macroeconomic analysis, inflation trends,
+            financial indicators, and global business insights.
+          </p>
+
+          <div class="tag">Economics • BI • AI</div>
+        </div>
+
       </div>
     </section>
 
-    <section id="contact" class="gsap-section">
+    <section id="contact">
+
       <div class="contact-box">
-        <h2 class="section-title">Global Connectivity</h2>
-        <p class="section-subtitle" style="margin: 0 auto;">
-          Whether you're looking to integrate AI into your enterprise, optimize operational workflows, or collaborate on tech architecture—let's open a dialogue.
+
+        <h2 class="section-title">Let’s Connect</h2>
+
+        <p class="section-subtitle" style="margin:auto auto 25px;">
+          I help businesses explore practical AI solutions,
+          improve workflows, analyze data, and turn complex information
+          into clear, actionable insights through AI, automation,
+          and business intelligence.
         </p>
-        
+
         <div class="contact-links">
-          
-          <!-- Gmail FIX: Hardcoded SVG Width/Height/Fill to guarantee it shows up -->
+
           <a href="mailto:ensar.maxhuni@gmail.com" class="contact-card">
-            <svg width="36" height="36" fill="#cbd5e1" style="margin-bottom: 12px;" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path d="M20 4H4C2.9 4 2.01 4.9 2.01 6L2 18C2 19.1 2.9 20 4 20H20C21.1 20 22 19.1 22 18V6C22 4.9 21.1 4 20 4ZM20 8L12 13L4 8V6L12 11L20 6V8Z"/>
-            </svg>
+            <span>📧</span>
             <strong>Email</strong>
             <small>ensar.maxhuni@gmail.com</small>
           </a>
-          
-          <!-- LinkedIn FIX -->
-          <a href="https://www.linkedin.com/in/ensarmaxhuni" target="_blank" class="contact-card">
-            <svg width="36" height="36" fill="#cbd5e1" style="margin-bottom: 12px;" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path d="M19 3A2 2 0 0 1 21 5V19A2 2 0 0 1 19 21H5A2 2 0 0 1 3 19V5A2 2 0 0 1 5 3H19M18.5 18.5V13.2A3.26 3.26 0 0 0 15.24 9.94C14 9.94 13.4 10.61 13.06 11.14V10.12H10.67V18.5H13.06V13.84C13.06 13.4 13.5 12.18 14.61 12.18C15.77 12.18 15.89 13.19 15.89 13.91V18.5H18.5M6.88 8.56A1.46 1.46 0 0 0 8.34 7.1A1.46 1.46 0 0 0 6.88 5.64A1.46 1.46 0 0 0 5.42 7.1A1.46 1.46 0 0 0 6.88 8.56M8.11 18.5H5.66V10.12H8.11V18.5Z"/>
-            </svg>
-            <strong>LinkedIn</strong>
-            <small>in/ensarmaxhuni</small>
-          </a>
 
-          <!-- GitHub FIX -->
-          <a href="https://github.com/ensarmaxhuni" target="_blank" class="contact-card">
-            <svg width="36" height="36" fill="#cbd5e1" style="margin-bottom: 12px;" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path d="M12 2A10 10 0 0 0 8.84 21.5C9.34 21.59 9.5 21.28 9.5 21V19.31C6.72 19.91 6.13 17.97 6.13 17.97C5.68 16.81 5.04 16.5 5.04 16.5C4.15 15.89 5.11 15.9 5.11 15.9C6.1 15.97 6.62 16.92 6.62 16.92C7.5 18.42 8.92 17.97 9.47 17.72C9.56 17.11 9.8 16.66 10.07 16.4C7.85 16.15 5.5 15.29 5.5 11.53C5.5 10.46 5.88 9.58 6.5 8.88C6.4 8.63 6.07 7.63 6.6 6.27C6.6 6.27 7.42 6 9.47 7.39A10.5 10.5 0 0 1 12 7.2A10.5 10.5 0 0 1 14.53 7.39C16.58 6 17.4 6.27 17.4 6.27C17.93 7.63 17.6 8.63 17.5 8.88C18.12 9.58 18.5 10.46 18.5 11.53C18.5 15.3 16.15 16.15 13.92 16.4C14.26 16.7 14.56 17.27 14.56 18.17V21C14.56 21.28 14.75 21.6 15.25 21.5A10 10 0 0 0 12 2Z"/>
-            </svg>
+          <a href="https://github.com/ensarmaxhuni"
+             target="_blank"
+             class="contact-card">
+            <span>🐙</span>
             <strong>GitHub</strong>
-            <small>ensarmaxhuni</small>
+            <small>github.com/ensarmaxhuni</small>
           </a>
 
-          <!-- Medium FIX -->
-          <a href="https://medium.com/@ensarmaxhuni" target="_blank" class="contact-card">
-            <svg width="36" height="36" fill="#cbd5e1" style="margin-bottom: 12px;" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path d="M6.83 17.23C3.61 17.23 1 14.89 1 12S3.61 6.77 6.83 6.77 12.67 9.11 12.67 12 10.06 17.23 6.83 17.23M18.84 17.06C17.21 17.06 15.89 14.8 15.89 12S17.21 6.94 18.84 6.94 21.79 9.2 21.79 12 20.47 17.06 18.84 17.06M23.36 16.63C23 16.63 22.71 14.55 22.71 12S23 7.37 23.36 7.37 24 9.45 24 12 23.72 16.63 23.36 16.63Z"/>
-            </svg>
-            <strong>Articles</strong>
-            <small>Medium Blog</small>
+          <a href="https://www.linkedin.com/in/ensarmaxhuni"
+             target="_blank"
+             class="contact-card">
+            <span>💼</span>
+            <strong>LinkedIn</strong>
+            <small>linkedin.com/in/ensarmaxhuni</small>
           </a>
+
         </div>
       </div>
     </section>
 
     <footer>
-      © 2026 Ensar Maxhuni. Enterprise AI & Intelligence Systems.
+      © 2026 Ensar Maxhuni. AI & Business Intelligence Portfolio.
     </footer>
+
   </div>
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.globe.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-  <script src="https://unpkg.com/@studio-freight/lenis@1.0.33/dist/lenis.min.js"></script>
-
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      
-      const lenis = new Lenis({
-        duration: 1.2,
-        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), 
-        direction: 'vertical',
-        smooth: true,
-      });
-
-      function raf(time) {
-        lenis.raf(time);
-        requestAnimationFrame(raf);
-      }
-      requestAnimationFrame(raf);
-
-      VANTA.GLOBE({
-        el: "#vanta-canvas",
-        mouseControls: true,
-        touchControls: true,
-        gyroControls: false,
-        minHeight: 200.00,
-        minWidth: 200.00,
-        scale: 1.00,
-        scaleMobile: 1.00,
-        color: 0x3b82f6,      
-        color2: 0x8b5cf6,     
-        size: 1.00,           
-        backgroundColor: 0x020617 
-      });
-
-      gsap.registerPlugin(ScrollTrigger);
-
-      // Animation speeds increased and movement reduced to eliminate gap feel
-      const tl = gsap.timeline();
-      
-      tl.from(".gsap-nav", { y: -10, opacity: 0, duration: 0.8, ease: "power2.out" })
-        .from(".gsap-hero-left h1", { y: 20, opacity: 0, duration: 0.8, ease: "power2.out" }, "-=0.6")
-        .from(".gsap-hero-left p", { y: 15, opacity: 0, duration: 0.6, ease: "power2.out" }, "-=0.6")
-        .from(".gsap-hero-left .buttons", { y: 10, opacity: 0, duration: 0.6, ease: "power2.out" }, "-=0.5")
-        .from(".gsap-hero-left .badge", { scale: 0.9, opacity: 0, duration: 0.5, ease: "back.out(1.5)" }, "-=0.7")
-        .from(".gsap-hero-right", { x: 20, opacity: 0, rotationY: 5, duration: 1, ease: "power2.out" }, "-=1.0");
-
-      // FIXED: Triggers immediately when scrolling down, preventing large blank spaces
-      gsap.utils.toArray(".gsap-section").forEach(section => {
-        gsap.from(section, {
-          scrollTrigger: {
-            trigger: section,
-            start: "top 100%", 
-            toggleActions: "play none none reverse"
-          },
-          y: 20,
-          opacity: 0,
-          duration: 0.6,
-          ease: "power2.out"
-        });
-      });
-
-      gsap.utils.toArray(".gsap-stagger-grid").forEach(grid => {
-        const cards = grid.querySelectorAll(".card");
-        gsap.from(cards, {
-          scrollTrigger: {
-            trigger: grid,
-            start: "top 100%",
-            toggleActions: "play none none reverse"
-          },
-          y: 20,
-          opacity: 0,
-          duration: 0.6,
-          stagger: 0.1, 
-          ease: "power2.out"
-        });
-      });
-
-      gsap.from(".contact-card", {
-        scrollTrigger: {
-            trigger: ".contact-links",
-            start: "top 100%",
-            toggleActions: "play none none reverse"
-        },
-        y: 20,
-        opacity: 0,
-        duration: 0.6,
-        stagger: 0.1,
-        ease: "power2.out"
-      });
-    });
-  </script>
 </body>
 </html>
